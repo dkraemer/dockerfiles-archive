@@ -4,7 +4,7 @@
 # Image portainer/golang-builder doesn't work inside a dockerfile
 # (/src is a volume and we can't access it while building)
 # so we need to use it's base image (golang:1.10) and tweak it.
-FROM golang:1.10.7-stretch as go-build
+FROM golang:1.10 as go-build
 ARG BUILD_ARCH=amd64
 
 # Install updates
@@ -34,7 +34,7 @@ RUN /build.sh /src/cmd/portainer
 # Stage 2: Build the management website #
 #########################################
 # Since we don't want to install node.js locally run it as a container.
-FROM node:10.14.2-stretch as node-build
+FROM node:10 as node-build
 ARG BUILD_ARCH=amd64
 
 # Install updates
