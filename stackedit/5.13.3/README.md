@@ -2,9 +2,11 @@
 ## Test it
 ```sh
 docker run \
-	-it --rm \
+	-it \
+	--rm \
+	--name stackedit \
 	-p 80:80 \
-	dkraemer/stackedit:5.13.3-linux-amd64
+	dkraemer/stackedit
 ```
 ## Run it
 ```sh
@@ -13,6 +15,6 @@ docker run \
 	--name stackedit \
 	-p 80:80 \
 	--restart=unless-stopped \
-	dkraemer/stackedit:5.13.3-linux-amd64
+	dkraemer/stackedit
 ```
 > Written with [StackEdit](https://stackedit.io/).
