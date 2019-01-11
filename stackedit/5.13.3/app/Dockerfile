@@ -1,4 +1,6 @@
-FROM node:lts AS build
+FROM node:8 AS build
+RUN apt-get update \
+ && apt-get upgrade -y --with-new-pkgs
 RUN git clone https://github.com/dkraemer/stackedit.git /src
 WORKDIR /src
 RUN git checkout v5.13.3
