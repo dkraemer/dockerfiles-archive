@@ -82,8 +82,8 @@ COPY --from=node-build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-cert
 # Copy required portainer files
 COPY --from=node-build /src/dist /
 
-# Setup required volumes for custom certificates and configuration
-VOLUME [ "/certs", "/data" ]
+# Setup required volume configuration
+VOLUME [ "/data" ]
 
 EXPOSE 9000
 ENTRYPOINT [ "/portainer" ]
